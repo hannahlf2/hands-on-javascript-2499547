@@ -5,10 +5,10 @@
  */
 
 const buildImage = ({
-  urls: {full, regular, small},
+  urls: { full, regular, small },
   width,
   height,
-  description
+  description,
 }) => {
   let srcset = `${full} ${width}w`;
   if (regular) {
@@ -46,8 +46,8 @@ const Card = (imgData) => {
   const {
     description,
     user: { name },
-    created_at: {createdDate},
-    links: {self}
+    created_at: { createdDate },
+    links: { self },
   } = imgData;
 
   return `
@@ -61,9 +61,9 @@ const Card = (imgData) => {
             <span class="image__photog">${name}</span>.
           </p>
           <p>
-            Uploaded on <time class="image__date" datetime="${
-              createdDate
-            }">${getDate(imgData)}</time>.
+            Uploaded on <time class="image__date" datetime="${createdDate}">${getDate(
+    imgData
+  )}</time>.
           </p>
           <p>
             <a href="${self}" class="image__link">
